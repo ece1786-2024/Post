@@ -1,7 +1,4 @@
-import accelerate
-import json
 import os
-import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
@@ -41,7 +38,7 @@ if __name__ == "__main__":
 
     dataset = MMHS150KDataset(annotations_file=annotations_file, image_dir=image_dir, target_transform=squash_labels)
 
-    train_data_loader = torch.utils.data.DataLoader(dataset, batch_size=16, shuffle=True, collate_fn=lambda batch:batch) #MMHS150KDataset.collate_fn(batch))
+    train_data_loader = torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=True, collate_fn=lambda batch:batch) #MMHS150KDataset.collate_fn(batch))
 
     # Show a tweet, its linked image, and the label
     for (id, image, text), label in (next(iter(train_data_loader))):
