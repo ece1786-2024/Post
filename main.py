@@ -50,9 +50,17 @@ if __name__ == "__main__":
     seed = 1786
     torch.manual_seed(seed)
 
+    # True if using the full MMHS150K dataset (external download)
+    # False if using the small curated dataset
+    FULL_DATASET = False
+
     dataset_path = os.path.join(os.getcwd(), "MMHS150K")
-    annotations_file = os.path.join(dataset_path, "MMHS150K_GT.json")
-    image_dir = os.path.join(dataset_path, "img_resized")
+    if FULL_DATASET:
+        annotations_file = os.path.join(dataset_path, "MMHS150K_GT.json")
+        image_dir = os.path.join(dataset_path, "img_resized")
+    else:
+        annotations_file = os.path.join(dataset_path, "MMHS150KCuratedSmall_GT.json")
+        image_dir = os.path.join(dataset_path, "curated_images")
 
     dataset = MMHS150KDataset(annotations_file=annotations_file, image_dir=image_dir, target_transform=squash_labels)
 
