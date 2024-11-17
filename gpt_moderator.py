@@ -88,20 +88,6 @@ class GPTModerator:
         - **VIOLATIONS**: Abuse/Harassment
         - **EXPLANATIONS**: The term "moron" is a targeted insult, constituting harassment under community guidelines.
             
-=======
-        1. "swear I’m sitting next to the noisiest cunt in the library"
-        - This does not comply with the community guidelines. 
-        - Votes:  ['OtherHate', 'Sexist', 'Sexist'].
-        2. "@HuffPost Will wonders never cease? Playing the race AND the woman card? Sad."
-        - This does not comply with the community guidelines.  
-        - Votes:  ['Racist', 'Racist', 'NotHate'].
-        3. "The 10 Most Redneck Cities In Massachusetts Explained https://t.co/kGWkBjXTm5 https://t.co/YqoWY7TPRV,"
-        - This does comply with the community guidelines.
-        - Votes:  ['NotHate', 'NotHate', 'NotHate'].
-        4. "@LordHizzle_ODG #RNS REAL NIGGA SHIT https://t.co/vcXdG3Knm2,"
-        - This does comply with the community guidelines.
-        - Votes: ['NotHate', 'NotHate', 'NotHate'].
->>>>>>> 980a4b9bf97f2dc00decc34739a2bbf4b6218d13
         """
         
         # Prompt Engineering
@@ -147,7 +133,6 @@ class GPTModerator:
         # Parse the response to extract compliance, violations, and explanations
         compliant = None
         violations = []
-        severity = []
         explanations = ""
 
         for line in response_text.splitlines():
