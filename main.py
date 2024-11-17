@@ -7,6 +7,8 @@ import numpy as np
 import torch
 
 from dotenv import load_dotenv
+from enum import Enum
+
 from MMHS150K_dataset import MMHS150KDataset
 from openai import OpenAI
 from process_dataset import squash_labels
@@ -44,6 +46,10 @@ Adult Content: The user may share consensually produced and distributed adult nu
 Illegal or Certain Regulated Goods or Services: The user may not use the platform for any unlawful purpose or in furtherance of illegal activities. This includes selling, buying, or facilitating transactions in illegal goods or services, as well as certain types of regulated goods or services. 
 """
 
+PPP_GPT_USER_PROMPT = """
+Does this image comply with the Platform Content Guidelines? Explain why or why not. Then, output 1 if the image is compliant or 0 if it is not.
+"""
+
 PPP_LLAVA_CONVERSATION_TEMPLATE = [
     {
         "role": "system",
@@ -68,6 +74,11 @@ PPP_LLAVA_CONVERSATION_TEMPLATE = [
     }
 ]
 
+class Datasets(Enum):
+    FULL = "MMHS150K"
+    SMALL = "MMHS150KCurated"
+    WEB = "Webscraper"
+
 if __name__ == "__main__":
     load_dotenv(".env")
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -76,17 +87,23 @@ if __name__ == "__main__":
     torch.manual_seed(seed)
     np.random.seed(seed)
 
-    # True if using the full MMHS150K dataset (external download)
-    # False if using the small curated dataset
-    FULL_DATASET = False
+    # Specify which dataset to use
+    USE_DATASET = Datasets.SMALL
+    print(f"Using dataset {USE_DATASET}")
 
     dataset_path = os.path.join(os.getcwd(), "MMHS150K")
-    if FULL_DATASET:
+    if USE_DATASET == Datasets.FULL:
         annotations_file = os.path.join(dataset_path, "MMHS150K_GT.json")
         image_dir = os.path.join(dataset_path, "img_resized")
-    else:
+    elif USE_DATASET == Datasets.SMALL:
         annotations_file = os.path.join(dataset_path, "MMHS150KCuratedSmall_GT.json")
         image_dir = os.path.join(dataset_path, "curated_images")
+    elif USE_DATASET == Datasets.WEB:
+        dataset_path = "Webscrape_result"
+        annotations_file = os.path.join(dataset_path, "Webscrape_GT.json")
+        image_dir = os.path.join(dataset_path, "images")
+    else:
+        raise ValueError(f"Unknown dataset {USE_DATASET}")
 
     dataset = MMHS150KDataset(annotations_file=annotations_file, image_dir=image_dir, target_transform=squash_labels)
 
@@ -158,7 +175,7 @@ if __name__ == "__main__":
                         "content": [
                             {
                                 "type": "text",
-                                "text": "Does this image comply with the Platform Content Guidelines? Explain why or why not. Output 1 if the image is compliant or 0 if it is not."
+                                "text": PPP_GPT_USER_PROMPT
                             },
                             {
                                 "type": "image_url",
@@ -169,7 +186,7 @@ if __name__ == "__main__":
                         ]
                     }
                 ],
-                temperature=1,
+                temperature=1.1,
                 max_tokens=2048,
                 top_p=1,
                 frequency_penalty=0,
