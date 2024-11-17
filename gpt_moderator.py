@@ -105,6 +105,17 @@ class GPTModerator:
             - No excessively violent or disturbing content    
            
         """
+
+        training_examples = """
+        1. "Nigga this shit hard... Had to add this to the playlist.."
+        - This is NOT hate. The word "nigga" is used colloquially and not in a hateful or offensive manner.
+        2. "Yes they can say dyke what u gonna do about it huh"
+        - This is NOT hate. The term "dyke" can be reclaimed and is not used here to demean or harm.
+        3. "Redneck"
+        - This IS hate. The term is used as a derogatory slur targeting a group based on cultural or regional identity.
+        4. "@realDonaldTrump Enjoy your weekend you cunt."
+        - This IS hate. The term "cunt" is a derogatory insult intended to demean a person.
+        """
         
         # TODO: Prompt Engineering
         prompt = f"""You are a precise content moderator specifically trained to evaluate content against Twitter's community guidelines.
@@ -114,6 +125,9 @@ class GPTModerator:
         Community Guidlines:
         {community_guidelines}
         
+        Examples of content and whether they comply with the guidelines:
+        {training_examples}
+
         Text to evaluate: 
         "{text_to_evaluate}"
         
@@ -159,3 +173,4 @@ class GPTModerator:
             "explanations": explanations,
             "response": response_text,
         }
+    
