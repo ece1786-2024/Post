@@ -30,5 +30,5 @@ Illegal or Certain Regulated Goods or Services: The user may not use the platfor
 """
 
 PPP_GPT_USER_PROMPT = """
-Does this image comply with the Platform Content Guidelines? Explain why or why not. Output 1 if the image is compliant or 0 if it is not.
+Does this image comply with the Platform Content Guidelines? Explain why or why not. Then, output 1 if the image is compliant or 0 if it is not.
 """

@@ -21,17 +21,13 @@ class Datasets(Enum):
     WEB = "Webscraper"
 
 # Constants
-PPP_BATCH_SIZE = 8
+PPP_BATCH_SIZE = 2
 # True: use LLAVA, False: use GPT-4o
 USE_LLAVA = False
-USE_DATASET = Datasets.SMALL
+USE_DATASET = Datasets.WEB
 
 
-"""
-Does this image comply with the Platform Content Guidelines? Explain why or why not. Then, output 1 if the image is compliant or 0 if it is not.
-"""
-
-def load_dataset(use_dataset:Datasets.value):
+def load_dataset(use_dataset:Datasets):
     dataset_path = os.path.join(os.getcwd(), "MMHS150K")
     if use_dataset == Datasets.FULL:
         annotations_file = os.path.join(dataset_path, "MMHS150K_GT.json")
@@ -74,7 +70,7 @@ def process_batch_llava(batch, processor, model):
         reconstructed_prompt = [frag for frag in full_generated_text.splitlines() if frag != '']
         print(reconstructed_prompt)
 
-def process_batch_gpt(batch, client, image_dir):
+def process_batch_gpt(batch, client, image_dir, temperature=1.1):
     for (id, _image, text), label in batch:
         image_display = _image.squeeze().permute((1, 2, 0))
         plt.imshow(image_display)
@@ -91,7 +87,7 @@ def process_batch_gpt(batch, client, image_dir):
         response = client.chat.completions.create(
             model="gpt-4o",
             messages=messages,
-            temperature=1,
+            temperature=temperature,
             max_tokens=2048,
             top_p=1,
             frequency_penalty=0,
