@@ -85,6 +85,7 @@ class GPTModerator:
         8. Text: "@realDonaldTrump You’re a moron."
         - **COMPLIANT**: No
         - **VIOLATIONS**: Abuse/Harassment
+<<<<<<< Updated upstream
         - **EXPLANATIONS**: The term "moron" is a targeted insult, constituting harassment under community guidelines.
             
         """
@@ -93,6 +94,16 @@ class GPTModerator:
         prompt = f"""You are a highly skilled content moderator specifically trained to evaluate content against community guidelines.
         
         ### Task: 
+=======
+        - **EXPLANATIONS**: The term "moron" is a targeted insult, constituting harassment under community guidelines.        
+        
+        """
+        
+        # TODO: Prompt Engineering
+        prompt = f"""You are a skilled content moderator trained to evaluate content against Twitter's community guidelines. Analyze the following text and determine compliance. Ensure your response is structured and considers the context, tone, and intent of the text.
+        
+        Task: 
+>>>>>>> Stashed changes
         1. Identify if the text violates any community guidelines.
         2. If violations exist, specify the violated guidelines and explain your reasoning in detail.
         3. If no violations are found, explicitly state that no violations are detected.
@@ -108,7 +119,11 @@ class GPTModerator:
         
         Provide your analysis in the following format:
         COMPLIANT: [Yes/No]
+<<<<<<< Updated upstream
         VIOLATIONSL [List each specific guideline violated, if any]
+=======
+        Violations: [List each specific guideline violated, if any]
+>>>>>>> Stashed changes
         Explanations: [Detailed explanation for each violation, citing specific parts of the text]       
         
         Notes:
@@ -132,7 +147,6 @@ class GPTModerator:
         # Parse the response to extract compliance, violations, and explanations
         compliant = None
         violations = []
-        severity = []
         explanations = ""
 
         for line in response_text.splitlines():
