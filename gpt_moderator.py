@@ -31,7 +31,7 @@ class GPTModerator:
                 - 'response': The raw response text from GPT.
         """
 
-        # TODO: Discuss how the community guide line should be input to the GPT Moderator
+        # Discuss how the community guide line should be input to the GPT Moderator
         community_guidelines = """
 
 Violent Content: The user may share graphic media if it is properly labeled, not prominently displayed and is not excessively gory or depicting sexual violence, but explicitly threatening, inciting, glorifying, or expressing desire for violence is not allowed. 
@@ -47,25 +47,60 @@ Illegal or Certain Regulated Goods or Services: The user may not use the platfor
         """
 
         training_examples = """
-        1. "Nigga this shit hard... Had to add this to the playlist.."
-        - This is NOT hate. The word "nigga" is used colloquially and not in a hateful or offensive manner.
-        2. "Yes they can say dyke what u gonna do about it huh"
-        - This is NOT hate. The term "dyke" can be reclaimed and is not used here to demean or harm.
-        3. "Redneck"
-        - This IS hate. The term is used as a derogatory slur targeting a group based on cultural or regional identity.
-        4. "@realDonaldTrump Enjoy your weekend you cunt."
-        - This IS hate. The term "cunt" is a derogatory insult intended to demean a person.
+        1. Text: "@user You're a dumb retard."
+        - **COMPLIANT**: No
+        - **VIOLATIONS**: Hateful Conduct, Abuse/Harassment
+        - **EXPLANATIONS**: The term "retard" is used as an insult, targeting a person's intellectual disability, violating both hateful conduct and abuse guidelines.
+
+        2. Text: "SJWs are ruining society."
+        - **COMPLIANT**: Yes
+        - **VIOLATIONS**: None
+        - **EXPLANATIONS**: While critical of a group (SJWs), the statement does not attack or demean based on protected characteristics like race or gender.
+
+        3. Text: "I can’t believe you’re this stupid! What a moron."
+        - **COMPLIANT**: No
+        - **VIOLATIONS**: Abuse/Harassment
+        - **EXPLANATIONS**: This text is a targeted insult intended to demean an individual, violating abuse guidelines.
+
+        4. Text: "Nigger is a racial slur."
+        - **COMPLIANT**: No
+        - **VIOLATIONS**: Hateful Conduct
+        - **EXPLANATIONS**: The term "nigger" is inherently offensive and violates guidelines on hateful conduct, regardless of the context in which it is used.
+
+        5. Text: "You might be a redneck if..."
+        - **COMPLIANT**: No
+        - **VIOLATIONS**: Hateful Conduct
+        - **EXPLANATIONS**: The term "redneck" perpetuates stereotypes and is used here in a derogatory manner, violating hateful conduct guidelines.
+
+        6. Text: "Enjoy your weekend, idiot!"
+        - **COMPLIANT**: Yes
+        - **VIOLATIONS**: None
+        - **EXPLANATIONS**: While mildly rude, the term "idiot" here does not target protected characteristics or involve harassment.
+
+        7. Text: "This retard doesn't know how to play."
+        - **COMPLIANT**: No
+        - **VIOLATIONS**: Hateful Conduct
+        - **EXPLANATIONS**: The term "retard" is used as a derogatory insult, violating guidelines against attacking individuals based on disability.
+
+        8. Text: "@realDonaldTrump You’re a moron."
+        - **COMPLIANT**: No
+        - **VIOLATIONS**: Abuse/Harassment
+        - **EXPLANATIONS**: The term "moron" is a targeted insult, constituting harassment under community guidelines.
+            
         """
         
-        # TODO: Prompt Engineering
-        prompt = f"""You are a precise content moderator specifically trained to evaluate content against Twitter's community guidelines.
+        # Prompt Engineering
+        prompt = f"""You are a highly skilled content moderator specifically trained to evaluate content against community guidelines.
         
-        Task: Analyze the following text for violations of Twitter's community guidelines. Provide a structured evaluation.
+        ### Task: 
+        1. Identify if the text violates any community guidelines.
+        2. If violations exist, specify the violated guidelines and explain your reasoning in detail.
+        3. If no violations are found, explicitly state that no violations are detected.
         
         Community Guidlines:
         {community_guidelines}
         
-        Examples of content and whether they comply with the guidelines:
+        Examples of content and their evaluations to guide your analysis:
         {training_examples}
 
         Text to evaluate: 
@@ -75,6 +110,11 @@ Illegal or Certain Regulated Goods or Services: The user may not use the platfor
         COMPLIANT: [Yes/No]
         VIOLATIONSL [List each specific guideline violated, if any]
         Explanations: [Detailed explanation for each violation, citing specific parts of the text]       
+        
+        Notes:
+        - Ensure the explanation addresses why the text is compliant or non-compliant.
+        - Context matters: a term can be compliant in one situation and non-compliant in another. Be specific in your reasoning.
+        - Include severity levels (Low/Medium/High) for each violation identified.
             
         """
 
