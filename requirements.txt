@@ -1,6 +1,15 @@
+# For Windows environment, please use the following packages
 pandas~=2.2.3
 matplotlib~=3.9.2
 numpy~=1.26.4
 torch~=2.5.1+cu124
 transformers~=4.46.2
 torchvision~=0.20.1+cu124
+
+### For macOS environment, please use the following packages
+# pandas~=2.2.3
+# matplotlib~=3.9.2
+# numpy~=1.26.4
+# torch~=2.5.1
+# transformers~=4.46.2
+# torchvision~=0.20.1
