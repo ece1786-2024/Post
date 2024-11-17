@@ -108,7 +108,7 @@ class GPTModerator:
         
         Provide your analysis in the following format:
         COMPLIANT: [Yes/No]
-        Violations: [List each ...]
+        VIOLATIONSL [List each specific guideline violated, if any]
         Explanations: [Detailed explanation for each violation, citing specific parts of the text]       
         
         Notes:
