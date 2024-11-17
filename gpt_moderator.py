@@ -34,19 +34,20 @@ class GPTModerator:
         # Discuss how the community guide line should be input to the GPT Moderator
         community_guidelines = """
 
-Violent Content: The user may share graphic media if it is properly labeled, not prominently displayed and is not excessively gory or depicting sexual violence, but explicitly threatening, inciting, glorifying, or expressing desire for violence is not allowed. 
-Violent & Hateful Entities: The user can’t affiliate with or promote the activities of violent and hateful entities. 
-Child Safety: The platform has zero tolerance for any forms of child sexual exploitation and remove certain media depicting physical child abuse to prevent the normalization of violence against children. 
-Abuse/Harassment: The user may not share abusive content, engage in the targeted harassment of someone, or incite other people to do so. 
-Hateful conduct: The user may not attack other people on the basis of race, ethnicity, national origin, caste, sexual orientation, gender, gender identity, religious affiliation, age, disability, or serious disease.  
-Perpetrators of Violent Attacks: The platform will remove any accounts maintained by individual perpetrators of terrorist, violent extremist, or mass violent attacks, and may also remove posts disseminating manifestos or other content produced by perpetrators.  
-Suicide: The user may not promote or encourage suicide or self-harm. 
-Adult Content: The user may share consensually produced and distributed adult nudity or sexual behavior, provided it's properly labeled and not prominently displayed.  
-Illegal or Certain Regulated Goods or Services: The user may not use the platform for any unlawful purpose or in furtherance of illegal activities. This includes selling, buying, or facilitating transactions in illegal goods or services, as well as certain types of regulated goods or services. 
+        Violent Content: The user may share graphic media if it is properly labeled, not prominently displayed and is not excessively gory or depicting sexual violence, but explicitly threatening, inciting, glorifying, or expressing desire for violence is not allowed. 
+        Violent & Hateful Entities: The user can’t affiliate with or promote the activities of violent and hateful entities. 
+        Child Safety: The platform has zero tolerance for any forms of child sexual exploitation and remove certain media depicting physical child abuse to prevent the normalization of violence against children. 
+        Abuse/Harassment: The user may not share abusive content, engage in the targeted harassment of someone, or incite other people to do so. 
+        Hateful conduct: The user may not attack other people on the basis of race, ethnicity, national origin, caste, sexual orientation, gender, gender identity, religious affiliation, age, disability, or serious disease.  
+        Perpetrators of Violent Attacks: The platform will remove any accounts maintained by individual perpetrators of terrorist, violent extremist, or mass violent attacks, and may also remove posts disseminating manifestos or other content produced by perpetrators.  
+        Suicide: The user may not promote or encourage suicide or self-harm. 
+        Adult Content: The user may share consensually produced and distributed adult nudity or sexual behavior, provided it's properly labeled and not prominently displayed.  
+        Illegal or Certain Regulated Goods or Services: The user may not use the platform for any unlawful purpose or in furtherance of illegal activities. This includes selling, buying, or facilitating transactions in illegal goods or services, as well as certain types of regulated goods or services. 
               
         """
 
         training_examples = """
+<<<<<<< HEAD
         1. Text: "@user You're a dumb retard."
         - **COMPLIANT**: No
         - **VIOLATIONS**: Hateful Conduct, Abuse/Harassment
@@ -87,6 +88,20 @@ Illegal or Certain Regulated Goods or Services: The user may not use the platfor
         - **VIOLATIONS**: Abuse/Harassment
         - **EXPLANATIONS**: The term "moron" is a targeted insult, constituting harassment under community guidelines.
             
+=======
+        1. "swear I’m sitting next to the noisiest cunt in the library"
+        - This does not comply with the community guidelines. 
+        - Votes:  ['OtherHate', 'Sexist', 'Sexist'].
+        2. "@HuffPost Will wonders never cease? Playing the race AND the woman card? Sad."
+        - This does not comply with the community guidelines.  
+        - Votes:  ['Racist', 'Racist', 'NotHate'].
+        3. "The 10 Most Redneck Cities In Massachusetts Explained https://t.co/kGWkBjXTm5 https://t.co/YqoWY7TPRV,"
+        - This does comply with the community guidelines.
+        - Votes:  ['NotHate', 'NotHate', 'NotHate'].
+        4. "@LordHizzle_ODG #RNS REAL NIGGA SHIT https://t.co/vcXdG3Knm2,"
+        - This does comply with the community guidelines.
+        - Votes: ['NotHate', 'NotHate', 'NotHate'].
+>>>>>>> 980a4b9bf97f2dc00decc34739a2bbf4b6218d13
         """
         
         # Prompt Engineering
