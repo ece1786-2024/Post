@@ -1,6 +1,9 @@
 from gpt_moderator import GPTModerator
 import json
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay
+import matplotlib.pyplot as plt
+from dotenv import load_dotenv
+import os
 
 def get_test_data(dataset_path):
     """
@@ -80,6 +83,13 @@ def evaluate_moderator(api_key, test_dataset):
         true_labels.append(true_label)
         predicted_labels.append(predicted_label)
 
+    # Generate confusion matrix
+    cm = confusion_matrix(true_labels, predicted_labels, labels=[1, 0])
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Hate", "Non-Hate"])
+    disp.plot(cmap="Blues", values_format="d")
+    plt.title("Confusion Matrix: Evaluating Community Guideline Compliance on Small Datase")
+    plt.show()
+
     # Compute evaluation metrics
     metrics = {
         "accuracy": accuracy_score(true_labels, predicted_labels) * 100,
@@ -90,10 +100,12 @@ def evaluate_moderator(api_key, test_dataset):
     return metrics
 
 if __name__ == "__main__":
+    load_dotenv(".env")
+    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
     dataset_path = "MMHS150K/MMHS150KCuratedSmall_GT.json" 
     test_dataset = get_test_data(dataset_path)
-    metrics = evaluate_moderator(api_key, test_dataset)
+    metrics = evaluate_moderator(OPENAI_API_KEY, test_dataset)
     print("Evaluation Metrics:")
     for metric, value in metrics.items():
         print(f"{metric.capitalize()}: {value:.2f}%")
