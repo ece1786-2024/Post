@@ -4,6 +4,7 @@ from openai import OpenAI
 class GPTModerator:
     """
     Moderate text against community guidelines using OpenAI's GPT API.
+    
     """
 
     def __init__(self, api_key):
@@ -89,6 +90,7 @@ class GPTModerator:
         
         """
         
+        
         # Prompt Engineering
         prompt = f"""You are a skilled content moderator trained to evaluate content against Twitter's community guidelines. Analyze the following text and determine compliance. Ensure your response is structured and considers the context, tone, and intent of the text.
         
@@ -114,9 +116,9 @@ class GPTModerator:
         Notes:
         - Ensure the explanation addresses why the text is compliant or non-compliant.
         - Context matters: a term can be compliant in one situation and non-compliant in another. Be specific in your reasoning.
-        - Include severity levels (Low/Medium/High) for each violation identified.
             
         """
+
 
         # Generate a response from GPT Moderator
         response = self.client.chat.completions.create(
