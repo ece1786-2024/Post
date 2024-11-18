@@ -47,7 +47,6 @@ class GPTModerator:
         """
 
         training_examples = """
-<<<<<<< HEAD
         1. Text: "@user You're a dumb retard."
         - **COMPLIANT**: No
         - **VIOLATIONS**: Hateful Conduct, Abuse/Harassment
@@ -115,7 +114,6 @@ class GPTModerator:
         Notes:
         - Ensure the explanation addresses why the text is compliant or non-compliant.
         - Context matters: a term can be compliant in one situation and non-compliant in another. Be specific in your reasoning.
-        - Include severity levels (Low/Medium/High) for each violation identified.
             
         """
 
