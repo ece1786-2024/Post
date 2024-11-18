@@ -21,10 +21,11 @@ class Datasets(Enum):
     WEB = "Webscraper"
 
 # Constants
-PPP_BATCH_SIZE = 2
+PPP_BATCH_SIZE = 8
 # True: use LLAVA, False: use GPT-4o
 USE_LLAVA = False
-USE_DATASET = Datasets.WEB
+USE_DATASET = Datasets.SMALL
+PPP_NO_OP = True
 
 
 def load_dataset(use_dataset:Datasets):
@@ -54,48 +55,49 @@ def encode_image(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode('utf-8')
 
+def print_multimodal_content(id, image, text, label):
+    image_display = image.squeeze().permute((1, 2, 0))
+    plt.imshow(image_display)
+    plt.title(id)
+    plt.show()
+    print(f"tweet_id: {id} || tweet_text: {text} || label: {label}")
+
 def process_batch_llava(batch, processor, model):
     for (id, image, text), label in batch:
-        image_display = image.squeeze().permute((1, 2, 0))
-        plt.imshow(image_display)
-        plt.title(id)
-        plt.show()
-        print(f"tweet_id: {id} || tweet_text: {text} || label: {label}")
+        print_multimodal_content(id, image, text, label)
 
-        text_prompt = processor.apply_chat_template(PPP_LLAVA_CONVERSATION_TEMPLATE)
-        inputs = processor(image, text_prompt, return_tensors="pt").to("cuda:0")
+        if not PPP_NO_OP:
+            text_prompt = processor.apply_chat_template(PPP_LLAVA_CONVERSATION_TEMPLATE)
+            inputs = processor(image, text_prompt, return_tensors="pt").to("cuda:0")
 
-        output = model.generate(**inputs, max_new_tokens=1000)
-        full_generated_text = processor.decode(output[0], skip_special_tokens=True)
-        reconstructed_prompt = [frag for frag in full_generated_text.splitlines() if frag != '']
-        print(reconstructed_prompt)
+            output = model.generate(**inputs, max_new_tokens=1000)
+            full_generated_text = processor.decode(output[0], skip_special_tokens=True)
+            reconstructed_prompt = [frag for frag in full_generated_text.splitlines() if frag != '']
+            print(reconstructed_prompt)
 
 def process_batch_gpt(batch, client, image_dir, temperature=1.1):
     for (id, _image, text), label in batch:
-        image_display = _image.squeeze().permute((1, 2, 0))
-        plt.imshow(image_display)
-        plt.title(id)
-        plt.show()
-        print(f"tweet_id: {id} || tweet_text: {text} || label: {label}")
+        print_multimodal_content(id, _image, text, label)
 
-        image_path = os.path.join(image_dir, f"{id}.jpg")
-        base64_image = encode_image(image_path)
+        if not PPP_NO_OP:
+            image_path = os.path.join(image_dir, f"{id}.jpg")
+            base64_image = encode_image(image_path)
 
-        messages = copy.deepcopy(PPP_GPT_SYSTEM_CONVERSATION_TEMPLATE)
-        messages[1]['content'][1]['image_url']['url'] = f"data:image/jpeg;base64,{base64_image}"
+            messages = copy.deepcopy(PPP_GPT_SYSTEM_CONVERSATION_TEMPLATE)
+            messages[1]['content'][1]['image_url']['url'] = f"data:image/jpeg;base64,{base64_image}"
 
-        response = client.chat.completions.create(
-            model="gpt-4o",
-            messages=messages,
-            temperature=temperature,
-            max_tokens=2048,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0,
-            response_format={"type": "text"}
-        )
+            response = client.chat.completions.create(
+                model="gpt-4o",
+                messages=messages,
+                temperature=temperature,
+                max_tokens=2048,
+                top_p=1,
+                frequency_penalty=0,
+                presence_penalty=0,
+                response_format={"type": "text"}
+            )
 
-        print(response.choices[0])
+            print(response.choices[0])
 
 def main():
     load_dotenv(".env")
