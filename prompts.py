@@ -120,3 +120,20 @@ Notes:
 - Ensure the explanation addresses why the text is compliant or non-compliant.
 - Context matters: a term can be compliant in one situation and non-compliant in another. Be specific in your reasoning.
 """
+
+
+PPP_GPT_EDITOR_SYSTEM_PROMPT = "You are a text editor tasked with revising content based on explanations."
+
+PPP_GPT_EDITOR_USER_PROMPT = """
+Explanation of Violations:
+"{explanation}"
+
+Text to Edit:
+"{text_to_edit}"
+
+Revise the above text to comply with community guidelines based on the provided explanation.
+Provide the revised text and explain the changes you made.
+Output should be structured as follows:
+Revised Text: <The revised text>
+Explanation: <Explanation of the changes>
+"""

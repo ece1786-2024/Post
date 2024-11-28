@@ -28,12 +28,14 @@ class GPTEditorEval:
             if c == False:
                 try:
                     edit = editor.edit_text(t, e)
+                    print(edit)
+                    print("")
                     edited_texts.append(edit['revised_text'])
                     all_edits.append(edit)  # Save the entire edit dictionary
                 except Exception as ex:
                     print(f"Error editing text: {t}\nException: {ex}")
                     continue
-            
+
         moderator = GPTModerator(self.OPENAI_API_KEY)
         predictions = []
         true_labels = [0] * len(edited_texts)  # Assuming all edited texts are true labels of Non-Hate (0)
@@ -46,11 +48,11 @@ class GPTEditorEval:
             except Exception as ex:
                 print(f"Error moderating text: {text}\nException: {ex}")
                 predictions.append(1)  # Default to Hate if moderation fails
-        
+
         metrics = {
             "accuracy": accuracy_score(true_labels, predictions) * 100,
         }
-        
+
         # Save metrics to a JSON file
         with open('output/editor_evaluation_metrics.json', 'w') as metrics_file:
             json.dump(metrics, metrics_file, indent=4)

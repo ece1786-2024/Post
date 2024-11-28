@@ -1,5 +1,8 @@
-import os
+import copy
 from openai import OpenAI
+from conversation_templates import PPP_GPT_EDITOR_CONVERSATION_TEMPLATE
+from prompts import PPP_GPT_EDITOR_USER_PROMPT
+
 
 class GPTEditor:
     """
@@ -7,16 +10,8 @@ class GPTEditor:
     """
 
     def __init__(self, api_key):
-        """
-        Initialize the GPTModerator with an API key.
-        Args:
-            api_key (str): OpenAI API key.
-        """
-        if not api_key:
-            raise ValueError("API key must be provided.")
-        # Set the API key
-        os.environ["OPENAI_API_KEY"] = api_key
-        self.client = OpenAI()
+        self.OPENAI_API_KEY = api_key
+        self.client = OpenAI(api_key=self.OPENAI_API_KEY)
 
     def edit_text(self, text_to_edit, explanation):
         """
@@ -31,37 +26,38 @@ class GPTEditor:
                 - 'explanation' (str): Explanation of how the text was revised.
         """
 
-        # TODO: Dicuss the input for the GPT Editor (text, explanantion, guideline, violation...)
-        prompt = (
-            f"Explanation of Violations:\n{explanation}\n\n"
-            f"Text to Edit:\n{text_to_edit}\n\n"
-            "Revise the above text to comply with community guidelines based on the provided explanation. "
-            "Provide the revised text and explain the changes you made. "
-            "Output should be structured as follows:\n"
-            "Revised Text: <The revised text>\n"
-            "Explanation: <Explanation of the changes>\n"
+        messages_template = copy.deepcopy(PPP_GPT_EDITOR_CONVERSATION_TEMPLATE)
+
+        user_prompt = PPP_GPT_EDITOR_USER_PROMPT.format(
+            text_to_edit = text_to_edit,
+            explanation = explanation,
         )
 
-        # Generate a response from GPT Editor
+        messages_template[1]['content'][0]['text'] = user_prompt
+
+        # Adjust those attribute to fine-tune the model's response
         response = self.client.chat.completions.create(
             model="gpt-4",
-            messages=[
-                {"role": "system", "content": "You are a text editor tasked with revising content based on explanations."},
-                {"role": "user", "content": prompt},
-            ],
+            messages=messages_template,
+            # temperature=temperature,
+            # max_tokens=2048,
+            # top_p=1,
+            # frequency_penalty=0,
+            # presence_penalty=0,
+            # response_format={"type": "text"}
         )
-        
+
         response_text = response.choices[0].message.content.strip()
         # Parse the response to extract the original text, revised text and explanation
         revised_text = ""
         explanation_of_changes = ""
-        
+
         for line in response_text.splitlines():
                 if line.lower().startswith("revised text:"):
                     revised_text = line.replace("Revised Text:", "").strip()
                 elif line.lower().startswith("explanation:"):
                     explanation_of_changes = line.replace("Explanation:", "").strip()
-                    
+
         return {
                 "original_text": text_to_edit,
                 "revised_text": revised_text,
