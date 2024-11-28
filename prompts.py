@@ -59,37 +59,27 @@ PPP_TRAINING_EXAMPLES = """
 2. Text: "SJWs are ruining society."
 - **COMPLIANT**: Yes
 - **VIOLATIONS**: None
-- **EXPLANATIONS**: While critical of a group (SJWs), the statement does not attack or demean based on protected characteristics like race or gender.
+- **EXPLANATIONS**: While critical of a group (SJWs), the statement does not attack or demean based on protected characteristics like race, gender, or disability.
 
 3. Text: "I can’t believe you’re this stupid! What a moron."
 - **COMPLIANT**: No
 - **VIOLATIONS**: Abuse/Harassment
 - **EXPLANATIONS**: This text is a targeted insult intended to demean an individual, violating abuse guidelines.
 
-4. Text: "Nigger is a racial slur."
-- **COMPLIANT**: No
-- **VIOLATIONS**: Hateful Conduct
-- **EXPLANATIONS**: The term "nigger" is inherently offensive and violates guidelines on hateful conduct, regardless of the context in which it is used.
+4. Text: "Have a great weekend! Keep up the good work."
+- **COMPLIANT**: Yes
+- **VIOLATIONS**: None
+- **EXPLANATIONS**: This text is positive and supportive, containing no offensive or harmful language.
 
 5. Text: "You might be a redneck if..."
 - **COMPLIANT**: No
 - **VIOLATIONS**: Hateful Conduct
 - **EXPLANATIONS**: The term "redneck" perpetuates stereotypes and is used here in a derogatory manner, violating hateful conduct guidelines.
 
-6. Text: "Enjoy your weekend, idiot!"
+6. Text: "Thank you for sharing this! It was insightful."
 - **COMPLIANT**: Yes
 - **VIOLATIONS**: None
-- **EXPLANATIONS**: While mildly rude, the term "idiot" here does not target protected characteristics or involve harassment.
-
-7. Text: "This retard doesn't know how to play."
-- **COMPLIANT**: No
-- **VIOLATIONS**: Hateful Conduct
-- **EXPLANATIONS**: The term "retard" is used as a derogatory insult, violating guidelines against attacking individuals based on disability.
-
-8. Text: "@realDonaldTrump You’re a moron."
-- **COMPLIANT**: No
-- **VIOLATIONS**: Abuse/Harassment
-- **EXPLANATIONS**: The term "moron" is a targeted insult, constituting harassment under community guidelines.
+- **EXPLANATIONS**: This text is respectful and constructive, promoting positive interaction without violating any guidelines.
 
 """
 
