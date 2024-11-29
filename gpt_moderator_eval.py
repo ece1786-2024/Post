@@ -1,7 +1,16 @@
 import json
+
 import matplotlib.pyplot as plt
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay
+import numpy as np
+from sklearn.metrics import ConfusionMatrixDisplay
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import f1_score
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
+
 from gpt_moderator import GPTModerator
+
 
 class GPTModeratorEval:
     def __init__(self, OPENAI_API_KEY):
@@ -27,10 +36,18 @@ class GPTModeratorEval:
 
         for tweet_id, tweet_info in data.items():
             tweet_text = tweet_info.get("tweet_text", "").strip()
-            labels = tweet_info.get("labels", [])
+            if tweet_info.get("text_only_label"):
+                labels = tweet_info.get("text_only_label")
+            else:
+                labels = tweet_info.get("labels", [])
 
+            squashed_labels = [
+                0 if label == 0
+                else 1
+                for label in labels
+            ]
             # Map labels to hate/non-hate
-            mapped_label = 0 if labels.count(0) > 1 else 1
+            mapped_label = 1 if np.mean(np.array(squashed_labels)) > 0.5 else 0
 
             test_data.append({
                 "tweet_id": tweet_id,

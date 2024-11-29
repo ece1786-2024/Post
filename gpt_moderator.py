@@ -1,7 +1,12 @@
 import copy
+
 from openai import OpenAI
+
 from conversation_templates import PPP_GPT_MODERATOR_CONVERSATION_TEMPLATE
-from prompts import PPP_COMMUNITY_GUIDELINES, PPP_TRAINING_EXAMPLES, PPP_GPT_MODERATOR_USER_PROMPT
+from prompts import PPP_COMMUNITY_GUIDELINES
+from prompts import PPP_GPT_MODERATOR_USER_PROMPT
+from prompts import PPP_TRAINING_EXAMPLES
+
 
 class GPTModerator:
     """
@@ -9,9 +14,25 @@ class GPTModerator:
 
     """
 
-    def __init__(self, api_key):
+    def __init__(self, api_key, PPP_NO_OP=False):
         self.OPENAI_API_KEY = api_key
         self.client = OpenAI(api_key=self.OPENAI_API_KEY)
+        self.PPP_NO_OP = PPP_NO_OP
+
+    def process_batch(self, batch):
+        results = {}
+        for (id, _image, text), label in batch:
+            if not self.PPP_NO_OP:
+                result = self.moderate_text(text)
+
+                results[id] = {
+                    "Original Text": text,
+                    "Compliance": result["compliant"],
+                    "Violations": result["violations"],
+                    "Moderator Reasoning": result["explanations"],
+                }
+
+        return results
 
     def moderate_text(self, text_to_evaluate):
         """

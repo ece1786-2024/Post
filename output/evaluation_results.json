@@ -6,7 +6,7 @@
             "Hateful Conduct",
             "Abuse/Harassment"
         ],
-        "explanations": "",
+        "explanations": "The phrase \"retard in the picture below\" is used here as an insult targeting the intellectual disability of the individual in the linked picture. This violates the guidelines of Hateful Conduct and Abuse/Harassment, as the platform prohibits users from attacking individuals on the basis of disability and engaging in targeted harassment.",
         "true_label": true
     },
     {
@@ -15,7 +15,7 @@
         "violations": [
             "None"
         ],
-        "explanations": "The text in question here is bringing up a topic of current debate. It does not resort to slander or derogatory language, neither does it present a threat or promote violence in any form. It merely questions the perspective of a group (SJWs) regarding a situation and contrasts it with another scenario. This is allowed under freedom of speech and does not violate any community guidelines.",
+        "explanations": "The text criticizes the actions of a group (SJWs and Spotify) and poses a question about a specific situation (re-hiring James Gunn), but does not attack or demean anyone based on their race, ethnicity, national origin, caste, sexual orientation, gender, gender identity, religious affiliation, age, disability, or serious disease. It also does not encourage violence, present uncategorized adult content, or promote illegal activities. It's a social comment that falls within the realm of free speech and does not seem to violate any of Twitter's community guidelines. The user makes a statement about a topical situation, engaging in what appears to be a critique of societal events or actions.",
         "true_label": true
     },
     {
@@ -25,26 +25,26 @@
             "Hateful Conduct",
             "Abuse/Harassment"
         ],
-        "explanations": "The use of derogatory language in this text, specifically the term \"cunt\", constitutes a clear violation of both the Hateful Conduct and Abuse/Harassment guidelines of Twitter's community policies.",
+        "explanations": "The phrase \"Lazy cunt\" is a derogatory insult and constitutes abusive/harassing language. This clearly constitutes a violation of the Abuse and Harassment guideline as it involves the targeted harassment of someone. Moreover, the use of the term \"cunt,\" a sexist and vulgar term, can be considered a gender-based attack, thus violating the guideline on Hateful Conduct. The guideline explicitly prohibits attacks on the basis of gender, which this insult implicitly does by using a derogatory term typically used against women. The URL following the text does not offer additional context that might alter this evaluation.",
         "true_label": true
     },
     {
         "text": "@realDonaldTrump You also get credit for separating them you stupid twat. https://t.co/sCrQN4N2AG",
         "compliant": false,
         "violations": [
-            "Abuse/Harassment"
+            "VIOLATIONS: Abuse/Harassment"
         ],
-        "explanations": "The text included in the tweet contains an insult directed at a specific person (\"you stupid twat\"). This type of language is used in a disparaging and derogatory manner, constituting targeted harassment against an individual, thus violating Twitter's community guidelines for Abuse/Harassment. It is important to maintain respectful conversations and avoid using offensive language or personal attacks.",
+        "explanations": "EXPLANATIONS: The message displays both a targeted insult and general belittlement directed at a specific user by calling him a \"stupid twat.\" This constitutes harassment under Twitter\u2019s community guidelines and is considered non-compliant, even though the same language might be tolerated if it was part of a general discussion and not aimed at a specific person.",
         "true_label": true
     },
     {
         "text": "@AmeriBurgerHans Yeah have fun protecting your family retard https://t.co/SafgIONda0",
         "compliant": false,
         "violations": [
-            "Abuse/Harassment",
-            "Hateful Conduct"
+            "Hateful Conduct",
+            "Abuse/Harassment"
         ],
-        "explanations": "This text is non-compliant with Twitter's community guidelines due to the use of \"retard\" as an insulting term. The term is intended to demean, and is targeted at an individual, thus violating the guidelines on Abuse/Harassment. Furthermore, the insult is also based on intellectual disability, which is a protected characteristic, constituting a violation of Hateful Conduct guidelines. The inclusion of a link does not directly influence the violation, unless it led to harmful content, furthering the abuse or harassment. However, without context or the ability to access the link, it is not considered in this evaluation. Therefore, whilst understanding that a term can be compliant in one situation and non-compliant in another, in this case, the use of the term \"retard\" is inappropriate and non-compliant with Twitter's community guidelines.",
+        "explanations": "The text \"@AmeriBurgerHans Yeah have fun protecting your family retard https://t.co/SafgIONda0\" violates the guidelines of Hateful Conduct and Abuse/Harassment. The term \"retard\" is used as an insult to demean the user, demonstrating contempt based on the user's perceived intellectual disability. This violates the Hateful Conduct guideline which prohibits attacking people based on disability. Additionally, the text is directed @AmeriBurgerHans, making it a targeted insult. This behavior is in violation of Twitter's Abuse/Harassment policy which states that users may not engage in the targeted harassment of someone.",
         "true_label": true
     },
     {
@@ -54,7 +54,7 @@
             "Hateful Conduct",
             "Abuse/Harassment"
         ],
-        "explanations": "The text contains the use of a racial slur, which is inherently offensive, indicating a clear violation of the guideline against Hateful Conduct. Furthermore, the racial slur is directed towards specific users, which also breaches the Abuse/Harassment guideline as it is a targeted derogatory attack. The use of this offensive terminology to insult or demean is explicitly prohibited by Twitter's community guidelines, regardless of the accompanying laughing emoji or hyperlink. This content promotes hate and harassment, and it's not acceptable under the platform's rules.",
+        "explanations": "The content violates the guideline on Hateful Conduct as it uses the term \"Nigger\", a highly offensive racial slur, attacking a group on the basis of their racial and ethnic identity, which Twitter strictly forbids. Additionally, the term \"fuck\" used in a direct mention to users is indicative of a personal attack and aggressive behavior, thereby violating the Abuse/Harassment guideline. The laughing emojis are used in connivance with the offensive language, indicating mockery and furthering the abusive intent.",
         "true_label": false
     },
     {
@@ -63,7 +63,7 @@
         "violations": [
             "Abuse/Harassment"
         ],
-        "explanations": "The term \"thick twat\" is aimed at the @The_Trump_Train and @realDonaldTrump Twitter handles, portraying an act of insult and demeaning behavior. It falls under the abuse/harassment guidelines for targeted harassment of an individual.",
+        "explanations": "The text \"@The_Trump_Train @realDonaldTrump Read this, you thick twat https://t.co/28aFDbNqOg\" specifically targets two users with the insult \"thick twat\" which is derogatory in nature, resulting in a violation of the Abuse/Harassment guidelines. While it is allowed to express one's opinions, framing them in a disrespectful manner that harasses or abuses another user is unacceptable.",
         "true_label": true
     },
     {
@@ -73,7 +73,7 @@
             "Hateful Conduct",
             "Abuse/Harassment"
         ],
-        "explanations": "The text under review contains explicit derogatory language aimed at demeaning someone based on their sexual orientation, specifically the term \"faggot,\" which is a derogatory term used to insult people of the LGBTQ+ community. This goes against Twitter's guidelines on hateful conduct, demonstrating an attack on the basis of sexual orientation. Additionally, the targeted nature of this insult also constitutes a violation of the rule against abuse and harassment, as it displays a targeted and explicit attempt to harass an individual user. The tone and intent of the message clearly show a violation of Twitter's community guidelines.",
+        "explanations": "The text includes offensive language and uses a term that is commonly considered to be a homophobic slur, violating Twitter's Hateful Conduct guideline which prohibits attacks on the basis of sexual orientation. Furthermore, the use of explicit language in a derogatory manner here is aiming to harm or demean an individual. Hence, the text also violates the Abuse/Harassment guideline.",
         "true_label": false
     },
     {
@@ -82,7 +82,7 @@
         "violations": [
             "None"
         ],
-        "explanations": "This tweet is sharing news about a court trial concerning a real-life event, which is compliant with Twitter's community guidelines. There are no violent threats, affiliations with violent or hateful entities, child safety concerns, personal attacks or harassment, hate speech, mentions of violent individuals or actions, encouragement of suicide or self-harm, explicit adult content, or promotion of illegal activities.",
+        "explanations": "This tweet does not violate any of Twitter's community guidelines. It is a straightforward announcement about a criminal trial, specifically mentioning the \"change of venue motion.\" It does not promote or glorify violence, use hate speech, target an individual or group for harassment, nor does it involve adult content, suicide or self-harm, illegal activities, or affiliations with violent entities. It simply provides information regarding an event, hence it is not in violation of any guidelines.",
         "true_label": true
     },
     {
@@ -90,9 +90,9 @@
         "compliant": false,
         "violations": [
             "Abuse/Harassment",
-            "Hateful Conduct"
+            "Hateful conduct"
         ],
-        "explanations": "The user launches personal attacks towards Ruby Walsh using derogatory and offensive language. This behavior contradicts the guidelines, which prohibit engaging in or inciting the harassment of someone. Additionally, the offensive language used to insult Ruby Walsh -- specifically, \"cheating fuck\" and \"mutant cunt\" -- expresses a level of contempt that can be classified as hateful conduct. The community rules do not permit anyone to attack others based on their characteristics or status, and such violation is evident in the use of these slurs. Therefore, this tweet is non-compliant with Twitter's community guidelines due to violations of Abuse/Harassment and Hateful Conduct.",
+        "explanations": "",
         "true_label": false
     },
     {
@@ -101,7 +101,7 @@
         "violations": [
             "None"
         ],
-        "explanations": "The text does not seem to violate any Twitter guidelines. The term \"redneck\" in this context is not used as a derogatory insult, but rather as a self-identity or cultural label. There is no evidence of abuse or harassment, the text doesn't promote violence, hateful conduct, or any illegal activities, nor does it depict adult content, endanger child safety, or affiliate with violent & hateful entities. Furthermore, the link provided doesn't directly violate any of the guidelines without further context. Hence, this text appears to be compliant with the guidelines.",
+        "explanations": "The text does not appear to break any of the mentioned guidelines. While the term \"redneck\" is used, it is not in a manner that makes fun of or demeans a person or a group of people based on their race, ethnicity, national origin, caste, sexual orientation, gender, gender identity, religious affiliation, age, disability, or serious disease. The text also doesn't involve harassment, threats, violent content, adult content, child safety violations, affiliation with violent and hateful entities, promotion of suicide or self-harm, or engagement in illegal activities. Therefore, it is found compliant with twitter's community guidelines.",
         "true_label": false
     },
     {
@@ -110,7 +110,7 @@
         "violations": [
             "None"
         ],
-        "explanations": "The text provided does not violate any of Twitter's community guidelines. It is a political statement related to immigration policy and is not engaging with any forms of violence, harassment, or hateful conduct. The hashtags used - #PassKate'sLaw and #buildthewall - are related to political discourse and do not promote or glorify violent or hateful entities. The text's tone might be considered assertive or strongly opinionated but it does not cross over to abuse, harassment, or harmful targeting of individuals or groups based on their protected characteristics.",
+        "explanations": "The text appears to be a political comment that does not violate any of the provided community guidelines. The hashtags used in the text, namely \"#PassKate'sLaw\" and \"#buildthewall\", are associated with certain political beliefs and concerns but don't express incitement of violence, harassment, hateful conduct, or any other violations of the guidelines. The linked content cannot be evaluated without further context. However, based on the text alone, there doesn't seem to be any violations of Twitter's community guidelines.",
         "true_label": false
     },
     {
@@ -119,7 +119,7 @@
         "violations": [
             "None"
         ],
-        "explanations": "The text does not contain any explicit threats, violent content, discriminating speech, or anything that could be considered harassment. The text appears to be celebrating a success, potentially in a technological endeavor (possibly referencing a Rube Goldberg machine). The hashtags seem to represent some sort of tech-related event or group. The attached URL may redirect to an image or video further elaborating on the success, which in itself doesn't violate any guidelines based on the information at hand.",
+        "explanations": "The text posted is a celebratory statement referring to a Rube Goldberg machine (\"Rube Goldberg success\"), followed by what appear to be related hashtags and a link, possibly to a photo or video of the machine. No parts of the text seem to violate any of Twitter's community guidelines. There are no instances of violent content, association with violent or hateful entities, child safety violations, abuse/harassment, hateful conduct, promotion of violent attacks, encouragement of suicide or self-harm, adult content, or illegal or regulated goods or services. The text appears to maintain a positive and compliant tone, expressing success without harming or targeting any individual or group.",
         "true_label": true
     },
     {
@@ -128,54 +128,52 @@
         "violations": [
             "Hateful Conduct"
         ],
-        "explanations": "The text contains the usage of derogatory terms that target specific groups of people. In this case, the term \"tranny\" is used which is considered derogatory and disrespectful towards transgender individuals. The comment also includes the racial slur \"nigger\", even if it is used as comparison, it is inherently offensive. Both instances violate Twitter's guidelines on hateful conduct, which prohibit attacks on people based on their race, ethnicity, national origin, gender identity and more.",
+        "explanations": "The text contains offensive language that carries negative racial and gender identity connotations. It uses terms like \"tranny\" which is considered derogatory and offensive towards transgender individuals, which demonstrates hateful conduct. It also includes the racial slur \"nigger\", regardless of its context, which is another example of hate speech. Both uses violate Twitter's guideline on Hateful Conduct which states that the user may not attack other people on the basis of race, ethnicity, sexual orientation, or gender identity. Even though the user seems to be discussing the negative implications of these terms, their usage in any context is considered a violation.",
         "true_label": true
     },
     {
         "text": "who's this cunt claiming to be jughead jones https://t.co/MD4MSdSlvy",
         "compliant": false,
         "violations": [
-            "Abuse/Harassment"
+            "Abuse/Harassment",
+            "Hateful Conduct"
         ],
-        "explanations": "The term \"cunt\" is used in this case in a derogatory and offensive manner that targets an individual, which constitutes a violation of the Abuse/Harassment guidelines. No matter the circumstances, demeaning language like this is unlikely to contribute positively to the conversation and can create an oppressive experience for the person targeted.",
+        "explanations": "The text in question violates Twitter's Abuse/Harassment and Hateful Conduct guidelines. The user employs a derogatory term, \"cunt,\" to refer to an unknown individual, which is a direct violation of the policy against the use of abusive language and targeted harassment. Additionally, the term \"cunt\" is commonly regarded as a sexist insult, suggesting that this text also violates the Hateful Conduct guideline, which prohibits attacking individuals on the basis of gender.",
         "true_label": false
     },
     {
         "text": "The unicorn must\u2019ve been retarded https://t.co/ZlelTxKFgz https://t.co/XUQSTOTCN5",
         "compliant": false,
         "violations": [
-            "Hateful Conduct",
-            "Abuse/Harassment"
+            "Hateful Conduct"
         ],
-        "explanations": "The use of the term \"retarded\" is in violation of both Hateful Conduct and Abuse/Harassment guidelines. It is used to demean and insult inferred attributes of the mentioned \"unicorn\", which amounts to targeting a hypothetical entity based on perceived disability. While \"unicorn\" is not a real person, the use of the term \"retarded\" in a casual derogatory manner can contribute to normalizing such offensive language. The context doesn't make it any less offensive, as it is an insult premised on intellectual disability.",
+        "explanations": "The phrase \"The unicorn must\u2019ve been retarded\" uses the term \"retarded\" which is considered derogatory and offensive, targeting intellectual disability. This violates the guideline on Hateful Conduct that prohibits attacks on the basis of disability. The context here does not mitigate the use of the term; it is used in a derogatory manner and is thus non-compliant with Twitter's community guidelines.",
         "true_label": false
     },
     {
         "text": "excluding a retarded gameplay you can see there a really close win. #Splatoon2 #NintendoSwitch https://t.co/8FH5ZZL1ak",
-        "compliant": false,
-        "violations": [
-            "Hateful Conduct"
-        ],
-        "explanations": "The term \"retarded\" in the context of this sentence is used as a derogatory term to devalue and belittle the state of the gameplay, applying a term derogatory to people with intellectual disabilities in a pejorative sense. Thus, it violates the guidelines against 'Hateful Conduct'. While game criticism is allowed, offensive language needs to be avoided.",
+        "compliant": null,
+        "violations": [],
+        "explanations": "",
         "true_label": true
     },
     {
         "text": "@DogginTrump Me, every single time I see that bloated cunt. https://t.co/t25GGVHztK",
         "compliant": false,
         "violations": [
-            "Abuse/Harassment",
-            "Adult Content"
+            "Hateful Conduct",
+            "Abuse/Harassment"
         ],
-        "explanations": "The text included in the post is derogatory and targets an individual, violating the Abuse/Harassment guidelines. Specifically, the term \"bloated cunt\" is an offensive insult aimed at demeaning or belittling the individual referenced. In addition, the use of explicit and crude language (\"cunt\") can be seen as adult content that is not properly labeled or disguised, contravening the Adult Content guidelines. This strong language, especially if targeting a specific user or group of users, can contribute to a hostile environment on the platform.",
+        "explanations": "The text contains a phrase that is used in an offensive and demeaning manner (\"bloated cunt\"). This derogatory term is targeting someone based on gender, which is a violation of Twitter's community guidelines under Hateful Conduct. The language used in this text can also be seen as a form of harassment, aiming to insult and demean a specific individual. Thus, Abuse/Harassment guideline is also violated. The context and tone of the post further amplify the violation of the guidelines. Therefore, the text is not compliant with Twitter's community guidelines.",
         "true_label": true
     },
     {
         "text": "You might be a redneck if you had this for lunch https://t.co/oyR2SEXL98",
         "compliant": false,
         "violations": [
-            "VIOLATIONS: Hateful Conduct"
+            "Hateful Conduct"
         ],
-        "explanations": "EXPLANATIONS: The phrase \"You might be a redneck if...\" plays on harmful stereotypes associated with the term \"redneck\". Although the text does not specifically target an individual, it still contributes to the negative portrayal of a group of people based on a common stereotype. This demeans people based on social factors, violating the community guideline against Hateful Conduct.",
+        "explanations": "The phrase \"you might be a redneck if\" implicitly stereotypes the traits, behaviors and lifestyle of a specific group of people generally associated with rural or working-class whites in the Southern United States. The use of the term \"redneck\" creates a generalization that could be seen as derogatory, offensive, or demeaning, which violates the community guidelines against hateful conduct. Also, in this context, a picture or a video is linked, indicating that whatever is depicted is considered a stereotypical behavior or characteristic, furthering the harmful stereotype and contributing to the violation.",
         "true_label": true
     },
     {
@@ -184,7 +182,7 @@
         "violations": [
             "None"
         ],
-        "explanations": "The text is an opinion about a potentially fictional entity or product referenced as \"Redneck Rumbo,\" which is likely the name of a song, album, or piece of media (it's not clear without follow-up context). The use of \"redneck\" in this context doesn't seem to be used as an attack on the basis of race, ethnicity, national origin, caste, or any other protected characteristic outlined in Twitter's guidelines. The tone appears to be negative, but doesn't wish harm or violence and doesn't engage with or promote hatred, abuse, or harassment towards a specific individual or group. No illegal activities, self-harm, adult content, or violent content are alluded to or encouraged in the text. Hence, no guidelines appear to be violated in this scenario.",
+        "explanations": "The text does not violate any community guidelines as it neither contains explicit language targeted towards an individual, nor promotes violence, harassment, or hateful conduct. Although \"Redneck Rumbo\" could be subjectively interpreted, without additional context indicating derogatory intent or targeted harassment it cannot be seen as a violation. The comment about it being 'NOT good' is simply expressing a perspective about a piece of content, not a person or group.",
         "true_label": true
     },
     {
@@ -193,7 +191,7 @@
         "violations": [
             "Hateful Conduct"
         ],
-        "explanations": "The text advocates for or at least trivializes the act of 'trashing' or belittling poor white people, which can be classified as an attack on the basis of social-economic status, thereby violating the community guidelines against hateful conduct. This can potentially incite further prejudiced behavior towards the group mentioned.",
+        "explanations": "The problematic statement is \"'Trash' Poor White People\". This phrase demonstrates a clear derogatory attack on individuals based on their economic status and race, which is a direct violation of the guidelines concerning hateful conduct. The term \"trash\" is used as an offensive term here and targets poor white people, treating them disrespectfully. Additionally, the term \"trash\" often carries a negative connotation when used in reference to individuals and insinuates that they are worthless or inferior. This can stimulate division and animosity among the users, breaching Twitter's guidelines.",
         "true_label": false
     },
     {
@@ -202,16 +200,16 @@
         "violations": [
             "None"
         ],
-        "explanations": "The text features personal political opinions and does not target any individuals or groups based on race, ethnicity, gender, disability, or other protected characteristics as outlined in Twitter's guidelines. It does not use vulgar language, incite violence, harass or abuse others. It does not affiliate or promote violent and hateful entities, nor does it express desire for violence. It does not involve child safety, adult content issues, suicide, or illegal activities. Therefore, it does not violate any of Twitter's community guidelines. The text is using political terms to state personal opinion, which is within the consistencies of free speech.",
+        "explanations": "The text is a political statement that expresses the user's perspective on immigration policy. While it uses a potentially divisive political term (\"socialist democrat\"), it does not attack or harass anyone on the basis of protected characteristics, promote violence or any form of hate or abuse, nor does it contain explicit or illegal content. Thus, the text doesn't violate Twitter's community guidelines. Context is important here: while expressing a strong political view, it does not violate the guidelines provided.",
         "true_label": false
     },
     {
         "text": "@RawStory I got your redneck rebellion right here... https://t.co/ud8qtKEOJG",
-        "compliant": false,
+        "compliant": true,
         "violations": [
-            "Hateful Conduct"
+            "None"
         ],
-        "explanations": "The text uses the term \"redneck\", which amounts to an attack on a person or group on the basis of their social, ethnic or cultural background. This kind of speech falls into the category of hateful conduct as per the community guidelines. The context of the usage does not negate the inherent derogatory nature of the term.",
+        "explanations": "The text does not violate any specific community guidelines. No abusive, hateful, or violent content is detected. The words \"redneck rebellion\" do not inherently constitute as an attack, threat, or demeaning based on any protected characteristic such as race, ethnicity, national origin, etc. However, it's important to note that if further context suggests derogatory intent or hate, judgement might vary.",
         "true_label": false
     },
     {
@@ -221,7 +219,7 @@
             "Hateful Conduct",
             "Abuse/Harassment"
         ],
-        "explanations": "The sentence \"@HypeDade305 Yeah you went full retard at the crib lmao https://t.co/06J11tMsY5\" contains offensive language directed towards a specific user, namely '@HypeDade305'. Using the term \"retard\" as an insult is in violation of Twitter's community guidelines concerning Hateful Conduct, as it can be seen as an attack on the basis of disability. Similarly, it is also an instance of Abuse/Harassment because it targets a particular user with derogatory language. Despite the inclusion of laughter in the phrase, \"lmao\", the overall tone of the message is still demeaning and targeted, thus the small attempt at humor does not mitigate the violations of the guidelines.",
+        "explanations": "The text uses the term \"retard\" in a derogatory manner with intent to insult or demean the targeted user, \"@HypeDade305\". This use of language violates the guidelines against Hateful Conduct as it targets people with intellectual disability. Additionally, the same text can be perceived as an act of targeted harassment given its direct and tactical application to personally insult and possibly provoke emotional distress. Therefore, it also violates the guidelines on Abuse/Harassment.",
         "true_label": false
     },
     {
@@ -230,16 +228,14 @@
         "violations": [
             "Hateful Conduct"
         ],
-        "explanations": "The use of the term \"nigger\" in the post is derogatory and inherently offensive, violating the Hateful Conduct guidelines. It's an attack directed towards an individual on the basis of race, which goes against Twitter's policy of protecting users from harmful content based on their race or ethnicity. The context in which the term is used does not mitigate its offensive nature. Intent is not a factor when using racial slurs as they are always considered a form of hateful conduct.",
+        "explanations": "The use of the racial slur \"nigger\" in reference to an individual is inherently offensive and strongly violates Twitter's community guidelines regarding Hateful Conduct. This term is derogatory, irrespective of the context in which it is used, and it is considered as an attack based on race/ethnicity. Prohibiting the use of this term is part of the efforts to create a safe environment for all users on the platform.",
         "true_label": false
     },
     {
         "text": "What an absolute cunt! https://t.co/rKBLce51re",
-        "compliant": false,
-        "violations": [
-            "Abuse/Harassment"
-        ],
-        "explanations": "The text \"What an absolute cunt!\" uses offensive and aggressive language to target or harass an individual or group, which is in violation of Twitter's community guidelines under Abuse/Harassment. The language used is meant to demean and insult, thus it is not compliant with the platform's rules against abusive content.",
+        "compliant": null,
+        "violations": [],
+        "explanations": "",
         "true_label": false
     }
 ]

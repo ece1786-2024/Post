@@ -6,3 +6,6 @@ MMHS150K.zip
 /.env
 /__pycache__/
 /.vscode/
+PPP_output.json
+output.txt
+/output
