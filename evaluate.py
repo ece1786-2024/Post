@@ -2,8 +2,8 @@ import os
 
 from dotenv import load_dotenv
 
-from gpt_moderator_eval import GPTModeratorEval
 from gpt_editor_eval import GPTEditorEval
+from gpt_moderator_eval import GPTModeratorEval
 from main import DatasetManager
 
 

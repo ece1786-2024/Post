@@ -1,17 +1,17 @@
 # main.py
 import json
 import os
+from enum import Enum
+
 import numpy as np
 import torch
 from dotenv import load_dotenv
-from enum import Enum
 
 from MMHS150K_dataset import MMHS150KDataset
 from gpt_editor import GPTEditor
-from process_dataset import squash_labels
-
-from vqa_moderator import VQAModerator
 from gpt_moderator import GPTModerator
+from process_dataset import squash_labels
+from vqa_moderator import VQAModerator
 
 
 class Datasets(Enum):

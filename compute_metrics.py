@@ -1,8 +1,8 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
-from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
 from sklearn.metrics import ConfusionMatrixDisplay
+from sklearn.metrics import confusion_matrix
+
 from main import Datasets
 
 GPT_VQA_LABELS = {

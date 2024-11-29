@@ -1,5 +1,7 @@
 import copy
+
 from openai import OpenAI
+
 from conversation_templates import PPP_GPT_EDITOR_CONVERSATION_TEMPLATE
 from prompts import PPP_GPT_EDITOR_USER_PROMPT
 
