@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 
 from gpt_moderator_eval import GPTModeratorEval
+from gpt_editor_eval import GPTEditorEval
 from main import DatasetManager
 
 
@@ -16,7 +17,7 @@ def evaluate():
     print("\n\nEvaluation start:")
     print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
-    # Import GPTModeratorEval and evaluate the moderator
+    # Evaluate the moderator
     evaluator = GPTModeratorEval(OPENAI_API_KEY)
     test_dataset = evaluator.get_test_data(annotations_file)
     metrics = evaluator.evaluate_moderator(test_dataset)
@@ -24,6 +25,13 @@ def evaluate():
     for metric, value in metrics.items():
         print(f"{metric.capitalize()}: {value:.2f}%")
 
+    # Evaluate the editor
+    editor_eval = GPTEditorEval(OPENAI_API_KEY)
+    texts, compliants, explanations, _ = editor_eval.get_data('output/evaluation_results.json')
+    editor_eval_metrics = editor_eval.evaluate_editor(texts, compliants, explanations)
+    print("Evaluation Metrics:")
+    for metric, value in editor_eval_metrics.items():
+        print(f"{metric.capitalize()}: {value:.2f}%")
 
 if __name__ == "__main__":
     evaluate()

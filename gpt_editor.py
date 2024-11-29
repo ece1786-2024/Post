@@ -60,6 +60,6 @@ class GPTEditor:
 
         return {
                 "original_text": text_to_edit,
-                "revised_text": revised_text,
+                "revised_text": revised_text.strip("\""),
                 "explanation": explanation_of_changes,
             }

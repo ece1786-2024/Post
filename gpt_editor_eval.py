@@ -1,8 +1,10 @@
 import json
-import matplotlib.pyplot as plt
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay
-from gpt_moderator import GPTModerator
+
+from sklearn.metrics import accuracy_score
+
 from gpt_editor import GPTEditor
+from gpt_moderator import GPTModerator
+
 
 class GPTEditorEval:
     def __init__(self, OPENAI_API_KEY):
@@ -28,8 +30,7 @@ class GPTEditorEval:
             if c == False:
                 try:
                     edit = editor.edit_text(t, e)
-                    print(edit)
-                    print("")
+                    print(f"\n{edit}\n")
                     edited_texts.append(edit['revised_text'])
                     all_edits.append(edit)  # Save the entire edit dictionary
                 except Exception as ex:
