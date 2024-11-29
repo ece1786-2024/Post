@@ -81,17 +81,19 @@ def main(PPP_OUTPUT_FILE_NAME, PPP_EVAL=False, PPP_NO_OP=False, DEBUG_TERMINATE=
         vqa_results = vqa_moderator.process_batch(batch, image_dir)
         mod_results = gpt_moderator.process_batch(batch)
 
+        # Aggregate the models' results and pass the information to the Editor model
         for id in set(vqa_results.keys()).union(set(mod_results.keys())):
             results[id] = {}
             results[id].update(vqa_results.get(id, {}))
             results[id].update(mod_results.get(id, {}))
 
-            if results[id].get("Compliance", True) == False:
-                edt_result = gpt_editor.edit_text(
-                    results[id].get("Original Text"),
-                    results[id].get("Moderator Reasoning")
-                )
-                results[id].update(edt_result)
+            if not PPP_NO_OP:
+                if results[id].get("Compliance", True) == False:
+                    edt_result = gpt_editor.edit_text(
+                        results[id].get("Original Text"),
+                        results[id].get("Moderator Reasoning")
+                    )
+                    results[id].update(edt_result)
 
         if DEBUG_TERMINATE:
             print("Debug terminate was enabled. Stopping after one batch.")
