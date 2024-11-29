@@ -1,14 +1,19 @@
-import os
 import base64
+import copy
+import os
+
 import matplotlib.pyplot as plt
 import torch
-import copy
-from transformers import LlavaNextForConditionalGeneration, LlavaNextProcessor
-from conversation_templates import PPP_LLAVA_CONVERSATION_TEMPLATE, PPP_GPT_SYSTEM_CONVERSATION_TEMPLATE
 from openai import OpenAI
+from transformers import LlavaNextForConditionalGeneration
+from transformers import LlavaNextProcessor
+
+from conversation_templates import PPP_GPT_SYSTEM_CONVERSATION_TEMPLATE
+from conversation_templates import PPP_LLAVA_CONVERSATION_TEMPLATE
+
 
 class VQAModerator:
-    def __init__(self, USE_LLAVA, OPENAI_API_KEY, PPP_NO_OP):
+    def __init__(self, USE_LLAVA, OPENAI_API_KEY, PPP_NO_OP=False):
         self.USE_LLAVA = USE_LLAVA
         self.OPENAI_API_KEY = OPENAI_API_KEY
         self.PPP_NO_OP = PPP_NO_OP
@@ -37,11 +42,12 @@ class VQAModerator:
 
     def process_batch(self, batch, image_dir):
         if self.USE_LLAVA:
-            self.process_batch_llava(batch)
+            return self.process_batch_llava(batch)
         else:
-            self.process_batch_gpt(batch, image_dir)
+            return self.process_batch_gpt(batch, image_dir)
 
     def process_batch_llava(self, batch):
+        results = {}
         for (id, image, text), label in batch:
             self.print_multimodal_content(id, image, text, label)
 
@@ -52,9 +58,14 @@ class VQAModerator:
                 output = self.model.generate(**inputs, max_new_tokens=1000)
                 full_generated_text = self.processor.decode(output[0], skip_special_tokens=True)
                 reconstructed_prompt = [frag for frag in full_generated_text.splitlines() if frag != '']
-                print(reconstructed_prompt)
+
+                #print(reconstructed_prompt)
+                results[id] = {"VQA Response": reconstructed_prompt}
+        return results
 
     def process_batch_gpt(self, batch, image_dir, temperature=1.1):
+        results = {}
+
         for (id, _image, text), label in batch:
             self.print_multimodal_content(id, _image, text, label)
 
@@ -76,4 +87,7 @@ class VQAModerator:
                     response_format={"type": "text"}
                 )
 
-                print(response.choices[0])
+                #print(response.choices[0])
+                results[id] = {"VQA Response": response.choices[0].message.content.strip()}
+
+        return results

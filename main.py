@@ -1,5 +1,5 @@
 # main.py
-
+import json
 import os
 import numpy as np
 import torch
@@ -7,10 +7,12 @@ from dotenv import load_dotenv
 from enum import Enum
 
 from MMHS150K_dataset import MMHS150KDataset
+from gpt_editor import GPTEditor
 from process_dataset import squash_labels
 
 from vqa_moderator import VQAModerator
-from gpt_moderator_eval import GPTModeratorEval
+from gpt_moderator import GPTModerator
+
 
 class Datasets(Enum):
     FULL = "MMHS150K"
@@ -19,10 +21,9 @@ class Datasets(Enum):
 
 class DatasetManager:
     # Constants
-    PPP_BATCH_SIZE = 8
+    PPP_BATCH_SIZE = 2
     USE_LLAVA = False
     USE_DATASET = Datasets.SMALL
-    PPP_NO_OP = True
 
     def __init__(self, use_dataset=USE_DATASET):
         self.use_dataset = use_dataset
@@ -49,7 +50,7 @@ class DatasetManager:
         )
         return dataset, image_dir, annotations_file
 
-def main():
+def main(PPP_OUTPUT_FILE_NAME, PPP_EVAL=False, PPP_NO_OP=False, DEBUG_TERMINATE=False):
     load_dotenv(".env")
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
@@ -63,8 +64,6 @@ def main():
     print(f"Using dataset {dataset_manager.USE_DATASET}")
     dataset, image_dir, annotations_file = dataset_manager.load_dataset()
 
-    ## Evaluate the VQAModerator, comment out if not needed
-
     train_data_loader = torch.utils.data.DataLoader(
         dataset,
         batch_size=dataset_manager.PPP_BATCH_SIZE,
@@ -72,24 +71,40 @@ def main():
         collate_fn=lambda batch: batch
     )
 
-    # Import VQAModerator and process the batch
-    vqa_moderator = VQAModerator(dataset_manager.USE_LLAVA, OPENAI_API_KEY, dataset_manager.PPP_NO_OP)
-    batch = next(iter(train_data_loader))
-    vqa_moderator.process_batch(batch, image_dir)
+    vqa_moderator = VQAModerator(dataset_manager.USE_LLAVA, OPENAI_API_KEY, PPP_NO_OP)
+    gpt_moderator = GPTModerator(OPENAI_API_KEY, PPP_NO_OP)
+    gpt_editor = GPTEditor(OPENAI_API_KEY)
 
+    #batch = next(iter(train_data_loader))
+    results = {}
+    for batch in train_data_loader:
+        vqa_results = vqa_moderator.process_batch(batch, image_dir)
+        mod_results = gpt_moderator.process_batch(batch)
 
-    ## Evaluate the GPTModerator, comment out if not needed
+        for id in set(vqa_results.keys()).union(set(mod_results.keys())):
+            results[id] = {}
+            results[id].update(vqa_results.get(id, {}))
+            results[id].update(mod_results.get(id, {}))
 
-    print("\n\nEvaluation start:")
-    print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+            if results[id].get("Compliance", True) == False:
+                edt_result = gpt_editor.edit_text(
+                    results[id].get("Original Text"),
+                    results[id].get("Moderator Reasoning")
+                )
+                results[id].update(edt_result)
 
-    # Import GPTModeratorEval and evaluate the moderator
-    evaluator = GPTModeratorEval(OPENAI_API_KEY)
-    test_dataset = evaluator.get_test_data(annotations_file)
-    metrics = evaluator.evaluate_moderator(test_dataset)
-    print("Evaluation Metrics:")
-    for metric, value in metrics.items():
-        print(f"{metric.capitalize()}: {value:.2f}%")
+        if DEBUG_TERMINATE:
+            print("Debug terminate was enabled. Stopping after one batch.")
+            break
+
+    print(results)
+    with open(PPP_OUTPUT_FILE_NAME, 'w') as fh:
+        json.dump(results, fh)
+
 
 if __name__ == "__main__":
-    main()
+    # Early terminate to run on a single batch to save on API calls
+    DEBUG_TERMINATE = True
+    output_filename = "PPP_output.json"
+
+    main(output_filename, PPP_EVAL=False, PPP_NO_OP=False, DEBUG_TERMINATE=DEBUG_TERMINATE)
