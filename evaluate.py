@@ -21,7 +21,7 @@ def evaluate():
     evaluator = GPTModeratorEval(OPENAI_API_KEY)
     test_dataset = evaluator.get_test_data(annotations_file)
     metrics = evaluator.evaluate_moderator(test_dataset)
-    print("Evaluation Metrics:")
+    print("Moderator Evaluation Metrics:")
     for metric, value in metrics.items():
         print(f"{metric.capitalize()}: {value:.2f}%")
 
@@ -29,7 +29,7 @@ def evaluate():
     editor_eval = GPTEditorEval(OPENAI_API_KEY)
     texts, compliants, explanations, _ = editor_eval.get_data('output/evaluation_results.json')
     editor_eval_metrics = editor_eval.evaluate_editor(texts, compliants, explanations)
-    print("Evaluation Metrics:")
+    print("Editor Evaluation Metrics:")
     for metric, value in editor_eval_metrics.items():
         print(f"{metric.capitalize()}: {value:.2f}%")
 
