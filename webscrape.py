@@ -1,6 +1,7 @@
+import json
 import os
 import time
-import json
+
 import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By
