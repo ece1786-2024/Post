@@ -1,0 +1,182 @@
+[
+    {
+        "text": "Just half?",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The text \"Just half?\" does not violate any of the guidelines given. The content does not contain any violent, abusive or hateful content. It does not target any individual or group based on the listed protected characteristics. The content also does not affiliate with or promote violent and hateful entities, doesn't encourage suicide or self-harm, and it doesn't involve illegal or certain regulated goods or services. The lack of context makes the comment ambiguous, but taken by itself it does not infringe on any guidelines.",
+        "true_label": true
+    },
+    {
+        "text": "This shows who the actual fascists are:",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The text does not violate any of the community guidelines as it is not explicitly threatening or glorifying violence. It also does not appear to be a form of targeted harassment or abusive behavior, and it isn't promoting any violent or hateful entities. Lastly, it's not depicting any unlawful behavior, nor does it convey hate or offensive language based on race, sexual orientation, or similar categories, and it does not promote self-harm or suicide. The usage of the term \"fascists\" is a political term, and while it might signify a form of criticism towards a group, it is not inherently derogatory or offensive outside of some political negative connotations. However, the feasibility of this response rests on the presumption of the absence of any contextual elements outside of the provided sentence that could otherwise confer violations of guidelines.",
+        "true_label": true
+    },
+    {
+        "text": "Why you don't see Melania at President Trump's campaign rallies:",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The text is a neutral inquiry or statement about a current event or public figure. It does not contain any form of harassment, hate speech, violent content, or any other violation of the community guidelines. The statement does not attack or demean anyone based on their race, ethnicity, national origin, caste, sexual orientation, gender, gender identity, religious affiliation, age, disability, or serious disease. It also doesn't incite violence, affiliate with or promote activities of violent or hateful entities, exploit children, promote suicide or self-harm, share adult content inappropriately, or promote any illegal or regulated goods or services.",
+        "true_label": true
+    },
+    {
+        "text": "Be the one that stands by the river like a mighty oak with big roots that reach down deep into the heart of creation. \nIt's easy to go with the flow and become numb, to quit caring and puff yourself up in ego.. \nIt is better to face yourself when you lift others up, there is no",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The text does not violate any Twitter community guidelines. It encourages a positive mentality and promotes personal growth and care for others. The language used does not promote or incite violence, hate, abuse, or harassment. It does not promote illegal activities nor does it contain adult content. Also, it doesn't attack any person (based on protected characteristics or not) or promote harmful behaviors such as self-harm or suicide. The message doesn't disgracefully affiliate with or promote the activities of violent and hateful entities and it doesn't exploit children. It is fully compliant with the guidelines presented.",
+        "true_label": true
+    },
+    {
+        "text": "the Egyptian women's beach volleyball team vs Spain at the Paris Olympics",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "This text is providing factual information without harassing or attacking any individual or group on the basis of protected characteristics. Furthermore, there are no explicit threats, incitements, or glorifications of violence, nor is there affiliation or promotion of violent and hateful entities. The post does not feature any illegal activities or adult content. Therefore, this text does not violate any of Twitter's community guidelines.",
+        "true_label": true
+    },
+    {
+        "text": "no way a cop got caught getting head at the border\u2026",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The text relates an event that the user is expressing surprise or incredulity about, possibly related to publicized news or gossip. It does not promote or glorify violence, affiliate with hateful entities, exploit children, engage in harassment or hateful conduct, promote suicide or self harm, involve adult content improperly, propose illegal activities or connect with violent attacks. The language used, though informal, does not attack or demean any person or group based on protected characteristics like race, disability, gender, sexual orientation, etc. It does not directly infringe any of the given community guidelines.",
+        "true_label": true
+    },
+    {
+        "text": "i know that ain\u2019t who i think it is",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The submitted text \"i know that ain\u2019t who i think it is\" does not violate any of the community guidelines. It does not include any violent, hateful, abusive or harmful content. It also does not promote any form of discrimination, illegal activities, suicide, or self-harm. Therefore, it complies with Twitter's community guidelines. Although the tone may be considered slightly negative or surprised depending on the context, without further context, this statement does not breach Twitter's guidelines.",
+        "true_label": true
+    },
+    {
+        "text": "In the name of the Father and the son and the Holy Spirit. \nGlory to God!",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The provided content does not violate any of Twitter's community guidelines. The text is a religious invocation, expressing praise to God. It does not contain violent content, hate speech, sexually explicit content, or any illegal content. Furthermore, it does not promote abuse/harassment, hateful conduct, or any activities of violent/hateful entities. Hence, it does not violate any of Twitter's rules regarding content sharing.",
+        "true_label": true
+    },
+    {
+        "text": "I would rather be full of love than money.\nThe love of money is a root of all kinds of evil, for which some have strayed from the faith in their greediness, and pierced themselves through with many sorrows.\nBut you, O man of God, flee these things and pursue righteousness,",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The text does not exhibit any violations of the community guidelines. It doesn't promote violence, affiliate with violent or hateful entities, exploit children, engage in targeted harassment or hate speech, promote self-harm or suicide, display adult content, or advertise illegal goods or services. The content seems to be sharing a personal belief or religious reference without attacking or harassing others. Thus, the text is compliant with the community guidelines.",
+        "true_label": true
+    },
+    {
+        "text": "so this is why Ben Affleck broke up with Jennifer Lopez",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The text in question doesn't violate any community guidelines. It is a comment on a public event (breakup of Ben Affleck and Jennifer Lopez) and does not explicitly share any violent content, affiliate with hateful entities, exploit child safety, incite harassment or abuse, use hateful conduct, maintain perpetrators of violent attacks, promote suicide or self-harm, share explicit adult content, or involve illegal or regulated goods or services. Even though it may imply criticism, or speculation on personal matters, it does not cross over into harassment or abuse as it stands.",
+        "true_label": true
+    },
+    {
+        "text": "\u201cI am the Alpha and the Omega,\u201d says the Lord God, \u201cwho is and who was and who is to come, the Almighty.\u201d\nGod is transforming trials into triumph for those that believe.",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The given text doesn't include any elements that would violate Twitter's community guidelines. It is a religious quote and a positive encouragement. There is no violent content, no association with violent and hateful entities, no child safety issues or abusive/harassing language. It doesn't display hateful conduct or promote suicide/self-harm, and doesn't involve adult content or illegal goods/services. Therefore, this text passes all criteria and does not violate any guidelines.",
+        "true_label": true
+    },
+    {
+        "text": "She is finished.",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The statement \"She is finished.\" is ambiguous and does not in itself contain any content that violates Twitter's Community guidelines. The text neither is explicit, threats, incitements to violence nor any harassment towards anyone. It does not affiliate with or promote violent and hateful entities and does not contain adult, violent, or any other restricted content. There's no context provided which might lead this statement to be seen as an attempt at harassment, hate speech, or incitement to violence, hence it is considered as compliant with the guidelines.",
+        "true_label": true
+    },
+    {
+        "text": "The woke mind virus is precisely measurable",
+        "compliant": true,
+        "violations": [
+            "VIOLATIONS: None"
+        ],
+        "explanations": "EXPLANATIONS: The statement \"The woke mind virus is precisely measurable\" does not infringe on any of the community guidelines by Twitter. It does express a negative perception of a concept (\"woke\") but it does not do so in a way that falls into any prohibited categories such as hate speech, harassment, child safety violation, violent content, suicide encouragement or promotion of illegal activities. The use of the term \"mind virus\" can be perceived as a critique or a metaphor, but without additional context, it does not represent a clear case of policy violation. While it is important to remember that context always matters, based on the available information, no direct violations are apparent.",
+        "true_label": true
+    },
+    {
+        "text": "That said, there are still far more D than R early votes! It\u2019s just that the in-person R vote on election day is historically far higher than D.\n\nPlease bring everyone you know to early vote. You can request & hand in your ballot in person at your county office.\n\nTomorrow is the",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "This text is urging people to vote early in an election. No guidelines in the present list are violated because the content does not include any threats of violence, harassment, hate speech, adult content, promotion of illegal activities or harmful ideologies, or any other abusive or inappropriate content. It's essentially a non-partisan call-to-action for voting.",
+        "true_label": true
+    },
+    {
+        "text": "So here\u2019s the thing \u2026",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "This text is simply an introductory phrase and does not contain any content that violates Twitter's guidelines. It does not promote violence or hateful conduct, does not exploit children, doesn't involve abuse or harassment, and doesn't associate with violent entities. It also doesn't attack individuals based on protected characteristics, promote suicide, share adult content without proper labeling, and doesn't facilitate illegal activities. Without further content, context or intent, this phrase alone is not in violation of any community guidelines.",
+        "true_label": true
+    },
+    {
+        "text": "It just gets crazier and crazier!",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The sentence \"It just gets crazier and crazier!\" does not violate any community guidelines. There is no explicit or implicit threat, incitement, or glorification of violence. It does not affiliate with or promote the activities of violent and hateful entities. There is no exploitation involving children, nor does it invite abuse or harassment towards an individual or group. It does not engage in any sort of hateful conduct or attack anyone based on their race, nationality, caste, sexual orientation, gender, religion, age, disability, or serious disease. It does not represent a violent attacker, advocate for suicide or self-harm, and does not share non-consensual adult content. Finally, there is no promotion or engagement in illegal activities, goods, or services. Thus, this content is compliant based on Twitter's community guidelines.",
+        "true_label": true
+    },
+    {
+        "text": "some of y\u2019all shouldn\u2019t be able to vote",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The statement \"some of y\u2019all shouldn\u2019t be able to vote\" expresses a personal opinion without engaging in direct abuse, harassment, propagating hateful conduct, or targeting people based on race, ethnicity, national origin, caste, sexual orientation, gender, gender identity, religious affiliation, age, disability, or serious disease. Thus, it does not violate any of the Twitter's community guidelines. However, as a moderator, it could be useful to monitor such conversations to ensure that they remain respectful and within guidelines moving forward.",
+        "true_label": true
+    },
+    {
+        "text": "America first is back:",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The text \"America first is back:\" does not violate any of Twitter's community guidelines. It does not contain any violent or abusive language, nor does it depict harassment or hate speech. It's not promoting or affiliated with any violent entities and does not involve child safety issues. The statement does not encourage suicide or self-harm or include any adult content. There are no implications of illegal activities or transactions being conducted. The text appears to be a political comment or slogan and does not directly target any individual or group based on protected characteristics as outlined in Twitter's hateful conduct policy. Consequently, the context, tone, and intent of this text do not violate any of Twitter's community guidelines.",
+        "true_label": true
+    },
+    {
+        "text": "The reality of this election was plain to see on \ud835\udd4f, while most legacy media lied relentlessly to the public. \n\nYou are the media now. \n\nPlease post your thoughts & observations on \ud835\udd4f, correct others when wrong and we will have at least one place in the world where you can come",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The text does not appear to violate any of Twitter's community guidelines as outlined. It does not include violent content, affiliations with violent or hateful entities, child safety violations, targeted harassment or abuse, hateful conduct, promotion of violent attacks or their perpetrators, encouragement of suicide or self-harm, explicit adult content, or promotion of illegal activities. It respectfully criticizes mainstream media, encourages individuals to share their thoughts, and promotes a well-informed community.",
+        "true_label": true
+    },
+    {
+        "text": "Too much?\nI've seen several Kathy Griffith posts, so here is mine:",
+        "compliant": true,
+        "violations": [
+            "None"
+        ],
+        "explanations": "The text does not violate any of Twitter's community guidelines. It does not contain violent content, promote violent or hateful entities, exploit children, engage in abuse or harassment, attack others based on protected attributes, promote or glorify violent attackers, encourage suicide or self-harm, share unlabeled adult content, or promote illegal or regulated goods or services. While it references posts about a controversial figure (Kathy Griffith), it does so without violating community guidelines.",
+        "true_label": true
+    }
+]
